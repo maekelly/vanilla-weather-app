@@ -8,7 +8,7 @@ body {
 }
 .infoContainer {
   background-color: #e4663a;
-  padding: 30px;
+  padding: 20px;
   position: relative;
   bottom: 180px;
   max-width: 600px;
@@ -22,23 +22,25 @@ body {
   display: block;
   margin: 0 auto;
 }
-#temperatureShown {
-  font-family: "Spicy Rice", cursive;
+#tomTemp,
+.forePlaceholder,
+#highLow,
+#cityShown,
+#temperatureShown,
+.weathIcon {
+  color: white;
 }
 #cityShown {
   font-size: 60px;
-  color: white;
 
   font-family: "Spicy Rice", cursive;
 }
 #temperatureShown {
+  font-family: "Spicy Rice", cursive;
   font-size: 60px;
   text-align: center;
-  color: white;
 }
-.fa-snowflake,
 .weathIcon {
-  color: white;
   font-size: 50px;
   text-align: right;
   margin-top: -10px;
@@ -49,12 +51,33 @@ body {
 #highLow {
   font-size: 23px;
 }
+#tomTemp,
+#tomFore,
+.forePlaceholder {
+  font-size: 14px;
+}
 .additionalWeathToday {
-  color: white;
   text-align: left;
   line-height: 28px;
   font-weight: 700;
 }
 #weathertype {
   font-size: 14px;
+}
+#tomIcon {
+  font-size: 30px;
+  display: block;
+}
+#tomIcon,
+#tomTemp,
+#tomFore,
+.forePlaceholder {
+  margin: auto;
+  text-align: center;
+}
+.forecast {
+  background-color: #fcfe7c38;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 5px;
 }
