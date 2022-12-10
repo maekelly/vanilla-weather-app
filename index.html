@@ -26,19 +26,45 @@
       <img id="sun" src="media/sun.png" alt="Sun" />
       <div class="infoContainer">
         <div class="row">
-          <h2 id="cityShown" class="col-6">Edinburgh</h2>
-          <h1 id="temperatureShown" class="col-6">12ºC</h1>
+          <h1 id="cityShown" class="col-7">Edinburgh</h1>
+          <h1 id="temperatureShown" class="col-5">12ºC</h1>
         </div>
         <div class="row">
-          <p>
-            Precipitation:
-            <br />
-            Wind:
-            <br />Feels like:
-          </p>
+          <div class="col-3 extraInfo">
+            <p>
+              Precipitation:
+              <br />
+              Wind:
+              <br />Feels like:
+            </p>
+          </div>
+          <div class="col-4 extraInfo">
+            <p>
+              <span class="precip">1</span>
+              <br />
+              <span class="wind">windy</span>
+              <br />
+              <span class="feels">cold</span>
+            </p>
+          </div>
+          <div class="col g-0 weathIcon">
+            <i class="fa-regular fa-snowflake"></i>
+          </div>
+          <div class="col">
+            <p class="additionalWeathToday">
+              <span id="highLow">10ºC/4ºC</span>
+              <br />
+              <span id="weatherType">Windy</span>
+            </p>
+          </div>
         </div>
       </div>
+
       <script src="src/app.js"></script>
+      <script
+        src="https://kit.fontawesome.com/c55b45646a.js"
+        crossorigin="anonymous"
+      ></script>
     </div>
   </body>
 </html>

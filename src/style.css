@@ -1,10 +1,14 @@
 body {
-  background-image: url("./media/sun.png");
+  background-image: url("../media/sunBack.png");
+  background-position: center;
+  background-size: cover;
+  background-color: #ffe35e;
   font-family: "Quicksand", sans-serif;
+  color: #faf1d0;
 }
 .infoContainer {
   background-color: #e4663a;
-  padding: 20px;
+  padding: 30px;
   position: relative;
   bottom: 180px;
   max-width: 600px;
@@ -18,15 +22,39 @@ body {
   display: block;
   margin: 0 auto;
 }
-#temperatureShown,
-#cityShown {
+#temperatureShown {
   font-family: "Spicy Rice", cursive;
 }
 #cityShown {
-  margin: auto;
-  font-size: 31.25px;
+  font-size: 60px;
+  color: white;
+
+  font-family: "Spicy Rice", cursive;
 }
 #temperatureShown {
-  font-size: 50px;
+  font-size: 60px;
   text-align: center;
+  color: white;
+}
+.fa-snowflake,
+.weathIcon {
+  color: white;
+  font-size: 50px;
+  text-align: right;
+  margin-top: -10px;
+}
+.extraInfo {
+  line-height: 18px;
+}
+#highLow {
+  font-size: 23px;
+}
+.additionalWeathToday {
+  color: white;
+  text-align: left;
+  line-height: 28px;
+  font-weight: 700;
+}
+#weathertype {
+  font-size: 14px;
 }
