@@ -1,4 +1,32 @@
-h1,
-p {
+body {
+  background-image: url("./media/sun.png");
+  font-family: "Quicksand", sans-serif;
+}
+.infoContainer {
+  background-color: #e4663a;
+  padding: 20px;
+  position: relative;
+  bottom: 180px;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+#sun {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+#temperatureShown,
+#cityShown {
   font-family: "Spicy Rice", cursive;
+}
+#cityShown {
+  margin: auto;
+  font-size: 31.25px;
+}
+#temperatureShown {
+  font-size: 50px;
+  text-align: center;
 }
