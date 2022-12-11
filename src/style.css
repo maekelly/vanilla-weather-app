@@ -32,14 +32,12 @@ body {
 .weathIcon {
   color: white;
 }
-#cityShown {
+#cityShown,
+#temperatureShown {
   font-size: 60px;
-
   font-family: "Spicy Rice", cursive;
 }
 #temperatureShown {
-  font-family: "Spicy Rice", cursive;
-  font-size: 60px;
   text-align: center;
 }
 .weathIcon {
@@ -47,11 +45,9 @@ body {
   text-align: right;
   margin-top: -10px;
 }
-.extraInfo {
-  line-height: 24px;
-  font-size: 23px;
-}
+.extraInfo,
 #highLow {
+  line-height: 24px;
   font-size: 23px;
 }
 #tomTemp,
@@ -144,4 +140,9 @@ footer {
 .footerP {
   color: #e4663a;
   text-align: center;
+}
+.units {
+  font-size: 23px;
+  position: relative;
+  top: -28px;
 }
