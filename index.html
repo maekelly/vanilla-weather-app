@@ -19,12 +19,13 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
     <title>Groovy Weather</title>
   </head>
   <body>
     <div class="container">
-      <button class="col currentBtn">🏠</button>
+      <button class="col currentBtn">
+        <i class="fa-solid fa-house-chimney"></i>
+      </button>
       <img class="rotating" id="sun" src="media/sun.png" alt="Sun" />
       <form id="search-form">
         <div class="row searchbar">
@@ -34,7 +35,7 @@
             placeholder="Take me to..."
             class="col-10"
           />
-          <input type="button" id="search-btn" value="✈️" class="col-2" />
+          <input type="submit" id="search-btn" value="✈️" class="col-2" />
         </div>
       </form>
 

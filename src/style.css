@@ -101,7 +101,7 @@ a:hover {
 }
 
 .rotating {
-  animation: rotating 500s linear infinite;
+  animation: rotating 400s linear infinite;
 }
 .theme {
   display: block;
@@ -143,6 +143,7 @@ a:hover {
   background-color: transparent;
   top: 120px;
   font-size: 50px;
+  color: #92253f;
 }
 /* .currentBtn:hover,
 #search-btn:hover {
@@ -203,4 +204,7 @@ footer {
 }
 .dark .theme {
   background-color: #5c54a4;
+}
+.dark .currentBtn {
+  color: #0c1445;
 }
