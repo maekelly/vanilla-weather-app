@@ -5,6 +5,7 @@ body {
   background-color: #ffe35e;
   font-family: "Quicksand", sans-serif;
   color: #faf1d0;
+  cursor: url(http://www.rw-designer.com/cursor-view/2936.png), auto;
 }
 .infoContainer {
   background-color: #e4663a;
@@ -12,6 +13,7 @@ body {
   position: relative;
   bottom: 180px;
   max-width: 600px;
+  min-width: 500px;
   display: block;
   margin: 0 auto;
   border-radius: 10px;
@@ -41,28 +43,27 @@ body {
   text-align: center;
 }
 .weathIcon {
-  font-size: 50px;
+  font-size: 60px;
   text-align: right;
   margin-top: -10px;
 }
 .extraInfo {
-  line-height: 18px;
+  line-height: 24px;
+  font-size: 23px;
 }
 #highLow {
   font-size: 23px;
 }
 #tomTemp,
 #tomFore,
-.forePlaceholder {
+.forePlaceholder,
+#weathertype {
   font-size: 14px;
 }
 .additionalWeathToday {
   text-align: left;
   line-height: 28px;
   font-weight: 700;
-}
-#weathertype {
-  font-size: 14px;
 }
 #tomIcon {
   font-size: 30px;
@@ -79,5 +80,68 @@ body {
   background-color: #fcfe7c38;
   border-radius: 10px;
   margin: 0px;
+
   padding: 5px;
+}
+.middle {
+  margin: 10px 0;
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  animation: rotating 500s linear infinite;
+}
+.searchbar {
+  position: relative;
+  bottom: 190px;
+  max-width: 210px;
+  margin: 0 auto;
+  left: 15px;
+}
+#search-input {
+  border: none;
+  border-radius: 4px;
+  background-color: #faf1d0;
+  color: #e4663a;
+}
+#search-btn {
+  background: none;
+  border: none;
+  position: relative;
+  right: 40px;
+}
+.currentBtn {
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  border: none;
+  background-color: transparent;
+  top: 120px;
+  font-size: 50px;
+}
+.currentBtn:hover,
+#search-btn:hover {
+  cursor: url(http://www.rw-designer.com/cursor-view/2956.png), auto;
+}
+#search-input:hover {
+  cursor: url(http://www.rw-designer.com/cursor-view/2942.png), auto;
+}
+footer {
+  background-color: #ffe35e;
+  width: 100%;
+  padding: 5px;
+  position: sticky;
+  bottom: 0px;
+}
+.footerP {
+  color: #e4663a;
+  text-align: center;
 }

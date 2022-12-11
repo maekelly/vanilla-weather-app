@@ -19,18 +19,31 @@
       rel="stylesheet"
     />
 
-    <title>Document</title>
+    <title>Groovy Weather</title>
   </head>
   <body>
     <div class="container">
-      <img id="sun" src="media/sun.png" alt="Sun" />
+      <button class="col currentBtn">🏠</button>
+      <img class="rotating" id="sun" src="media/sun.png" alt="Sun" />
+      <form id="search-form">
+        <div class="row searchbar">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Take me to..."
+            class="col-10"
+          />
+          <input type="button" id="search-btn" value="✈️" class="col-2" />
+        </div>
+      </form>
+
       <div class="infoContainer">
         <div class="row">
           <h1 id="cityShown" class="col-7">Edinburgh</h1>
           <h1 id="temperatureShown" class="col-5">12ºC</h1>
         </div>
-        <div class="row">
-          <div class="col-3 extraInfo">
+        <div class="row middle">
+          <div class="col extraInfo">
             <strong>
               <p>
                 Precipitation:
@@ -40,7 +53,7 @@
               </p>
             </strong>
           </div>
-          <div class="col-4 extraInfo">
+          <div class="col extraInfo">
             <p>
               <span class="precip">1</span>
               <br />
@@ -93,12 +106,20 @@
           </div>
         </div>
       </div>
-
       <script src="src/app.js"></script>
       <script
         src="https://kit.fontawesome.com/c55b45646a.js"
         crossorigin="anonymous"
       ></script>
     </div>
+    <footer>
+      <p class="footerP">
+        This groovy weather app is
+        <a href="https://github.com/maekelly/vanilla-weather-app"
+          >open source</a
+        >
+        and was created by Mae Kelly
+      </p>
+    </footer>
   </body>
 </html>
