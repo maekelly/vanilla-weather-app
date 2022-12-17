@@ -1,6 +1,5 @@
 function ediWeather(response) {
   let newIcon = response.data.daily[0].condition.icon_url;
-
   tempShown.innerHTML = Math.round(response.data.daily[0].temperature.day);
   weatherIcon.innerHTML = `<img src='${newIcon}'>`;
   highT.innerHTML = Math.round(response.data.daily[0].temperature.maximum);
@@ -14,10 +13,26 @@ function ediWeather(response) {
 
 function searchFct(event) {
   event.preventDefault();
-  console.log(cityInput.value);
+  let apiUrlsearch = `https://api.shecodes.io/weather/v1/forecast?query=${cityInput.value}&key=${apiKey}`;
+  axios.get(apiUrlsearch).then(updateCity);
+}
+
+function updateCity(response) {
+  let newIcon = response.data.daily[0].condition.icon_url;
+  cityShown.innerHTML = `${cityInput.value}`;
+  tempShown.innerHTML = Math.round(response.data.daily[0].temperature.day);
+  weatherIcon.innerHTML = `<img src='${newIcon}'>`;
+  highT.innerHTML = Math.round(response.data.daily[0].temperature.maximum);
+  lowT.innerHTML = Math.round(response.data.daily[0].temperature.minimum);
+  humidityShown.innerHTML = Math.round(
+    response.data.daily[0].temperature.humidity
+  );
+  windShown.innerHTML = Math.round(response.data.daily[0].wind.speed);
+  weatherType.innerHTML = response.data.daily[0].condition.description;
 }
 
 let now = new Date();
+let cityShown = document.querySelector("#cityShown");
 let citySearch = document.querySelector("#search-form");
 let cityInput = document.querySelector("#search-input");
 let weatherType = document.querySelector("#weatherType");
