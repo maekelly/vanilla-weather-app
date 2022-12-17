@@ -6,6 +6,7 @@ body {
   font-family: "Quicksand", sans-serif;
   color: #faf1d0;
   height: 100vh;
+  text-transform: capitalize;
 }
 a {
   color: #92253f;
@@ -34,12 +35,12 @@ a:hover {
   display: block;
   margin: 0 auto;
 }
+
 #tomTemp,
 .forePlaceholder,
 #highLow,
 #cityShown,
-#temperatureShown,
-.weathIcon {
+#temperatureShown {
   color: white;
 }
 #cityShown,
@@ -47,14 +48,10 @@ a:hover {
   font-size: 60px;
   font-family: "Spicy Rice", cursive;
 }
-#temperatureShown {
-  text-align: center;
-}
-.weathIcon {
-  font-size: 60px;
+#rightAlign {
   text-align: right;
-  margin-top: -10px;
 }
+
 .extraInfo,
 #highLow {
   line-height: 24px;
@@ -68,7 +65,7 @@ a:hover {
 }
 .additionalWeathToday {
   text-align: left;
-  line-height: 28px;
+  line-height: 15px;
   font-weight: 700;
 }
 #tomIcon {
@@ -191,6 +188,7 @@ footer {
 .dark #search-input {
   background-color: #cdcbe4;
 }
+.dark #search-input,
 .dark .forePlaceholder,
 .dark #tomTemp {
   color: #0c1445;
@@ -207,4 +205,21 @@ footer {
 }
 .dark .currentBtn {
   color: #0c1445;
+}
+.crop {
+  display: block;
+  margin: 0 auto;
+  height: 60px;
+  overflow: hidden;
+}
+
+.crop img {
+  display: block;
+  width: 130px;
+  height: 130px;
+  margin: -40px -25px;
+}
+#weatherType {
+  line-height: 10px;
+  text-transform: capitalize;
 }

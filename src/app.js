@@ -1,18 +1,52 @@
-function searchCity() {
-  console.log(searchInput.value);
+function ediWeather(response) {
+  let newIcon = response.data.daily[0].condition.icon_url;
 
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInput.value}&key=${apiKey}`;
-  console.log(apiUrl);
+  tempShown.innerHTML = Math.round(response.data.daily[0].temperature.day);
+  weatherIcon.innerHTML = `<img src='${newIcon}'>`;
+  highT.innerHTML = Math.round(response.data.daily[0].temperature.maximum);
+  lowT.innerHTML = Math.round(response.data.daily[0].temperature.minimum);
+  humidityShown.innerHTML = Math.round(
+    response.data.daily[0].temperature.humidity
+  );
+  windShown.innerHTML = Math.round(response.data.daily[0].wind.speed);
+  weatherType.innerHTML = response.data.daily[0].condition.description;
 }
 
-let apiKey = "2c8a3dfad180of4f0ft83a44b4afcc97";
-let searchInput = document.querySelector("#search-input");
-let searchBtn = document.querySelector("#search-btn");
-let citySearch = document.querySelector("#search-form");
-let cityShown = document.querySelector("#cityShown");
-let tempShown = document.querySelector("#temperatureShown");
+function searchFct(event) {
+  event.preventDefault();
+  console.log(cityInput.value);
+}
 
-citySearch.addEventListener("submit", searchCity);
+let now = new Date();
+let citySearch = document.querySelector("#search-form");
+let cityInput = document.querySelector("#search-input");
+let weatherType = document.querySelector("#weatherType");
+let humidityShown = document.querySelector(".humidity");
+let windShown = document.querySelector(".wind");
+let weatherIcon = document.querySelector("#currentIcon");
+let highT = document.querySelector("#highT");
+let lowT = document.querySelector("#lowT");
+let tempShown = document.querySelector("#temperatureShown");
+let apiKey = "2c8a3dfad180of4f0ft83a44b4afcc97";
+let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=edinburgh&key=${apiKey}`;
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+
+// let firstDay = document.querySelector(".firstDay");
+// let secondDay = document.querySelector(".secondDay");
+// let thirdDay = document.querySelector(".thirdDay");
+// let fourthDay = document.querySelector(".fourthDay");
+// let fifthDay = document.querySelector(".fifthDay");
+citySearch.addEventListener("submit", searchFct);
+axios.get(apiUrl).then(ediWeather);
 
 //Theme Changing button
 function changeTheme() {
