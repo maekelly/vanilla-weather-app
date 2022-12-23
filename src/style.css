@@ -45,7 +45,7 @@ a:hover {
 }
 #cityShown,
 #temperatureShown {
-  font-size: 50px;
+  font-size: 40px;
   font-family: "Spicy Rice", cursive;
 }
 #rightAlign {
@@ -98,7 +98,7 @@ a:hover {
 }
 
 .rotating {
-  animation: rotating 400s linear infinite;
+  animation: rotating 40s linear infinite;
 }
 .theme {
   display: block;
@@ -217,7 +217,7 @@ footer {
   display: block;
   width: 100px;
   height: 100px;
-  margin: -20px -17px;
+  margin: -20px 0px 0px 0px;
 }
 #weatherType {
   line-height: 10px;
