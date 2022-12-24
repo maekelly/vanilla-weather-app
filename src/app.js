@@ -1,8 +1,15 @@
-function preLoad(response) {
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${response}&key=${apiKey}`;
+homeWeather();
+
+function handleCurrentPos(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}`;
   axios.get(apiUrl).then(search);
 }
 
+function homeWeather() {
+  navigator.geolocation.getCurrentPosition(handleCurrentPos);
+}
 function searchFct(event) {
   event.preventDefault();
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${cityInput.value}&key=${apiKey}`;
@@ -29,11 +36,7 @@ function search(response) {
   windShown.innerHTML = Math.round(response.data.daily[0].wind.speed);
   weatherType.innerHTML = response.data.daily[0].condition.description;
   cityShown.innerHTML = response.data.city;
-  // if (cityInput.value) {
-  //   cityShown.innerHTML = `${cityInput.value}`;
-  // } else {
-  //   cityShown.innerHTML = `Edinburgh`;
-  // }
+  displayForecast();
 }
 
 let cityInput = document.querySelector("#search-input");
@@ -41,24 +44,12 @@ let citySearch = document.querySelector("#search-form");
 let apiKey = "2c8a3dfad180of4f0ft83a44b4afcc97";
 let homeBtn = document.querySelector("#home-btn");
 citySearch.addEventListener("submit", searchFct);
-preLoad("edinburgh");
 
-// let days = [
-//   "Sunday",
-//   "Monday",
-//   "Tuesday",
-//   "Wednesday",
-//   "Thursday",
-//   "Friday",
-//   "Saturday",
-// ];
-// let day = days[now.getDay()];
+let themeBtn = document.querySelector(".theme");
+themeBtn.addEventListener("click", changeTheme);
 
-// let firstDay = document.querySelector(".firstDay");
-// let secondDay = document.querySelector(".secondDay");
-// let thirdDay = document.querySelector(".thirdDay");
-// let fourthDay = document.querySelector(".fourthDay");
-// let fifthDay = document.querySelector(".fifthDay");
+let currentWeather = document.querySelector("#home-btn");
+currentWeather.addEventListener("click", homeWeather);
 
 function changeTheme() {
   let body = document.querySelector("body");
@@ -71,19 +62,30 @@ function changeTheme() {
   }
 }
 
-let themeBtn = document.querySelector(".theme");
-themeBtn.addEventListener("click", changeTheme);
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
 
-function handleCurrentPos(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}`;
-  axios.get(apiUrl).then(search);
+  let forecastHTML = "";
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col" id="forecast">
+    <p class="tomTemp">13ºC</p>
+    <p class="fa-snowflake tomIcon"></p>
+    <p id="tomFore">
+    <span class="fore-temp-max">2</span>ºC/<span class="fore-temp-min">3</span>ºC</p>
+    <p class="forePlaceholder firstDay">${day}</p>
+  </div>`;
+  });
+  forecastElement.innerHTML = forecastHTML;
 }
 
-function homeWeather() {
-  navigator.geolocation.getCurrentPosition(handleCurrentPos);
-}
+// let day = days[now.getDay()];
 
-let currentWeather = document.querySelector("#home-btn");
-currentWeather.addEventListener("click", homeWeather);
+// let firstDay = document.querySelector(".firstDay");
+// let secondDay = document.querySelector(".secondDay");
+// let thirdDay = document.querySelector(".thirdDay");
+// let fourthDay = document.querySelector(".fourthDay");
+// let fifthDay = document.querySelector(".fifthDay");

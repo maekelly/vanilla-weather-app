@@ -36,7 +36,7 @@ a:hover {
   margin: 0 auto;
 }
 
-#tomTemp,
+.tomTemp,
 .forePlaceholder,
 #highLow,
 #cityShown,
@@ -57,7 +57,7 @@ a:hover {
   line-height: 24px;
   font-size: 23px;
 }
-#tomTemp,
+.tomTemp,
 #tomFore,
 .forePlaceholder,
 #weathertype {
@@ -68,15 +68,15 @@ a:hover {
   line-height: 15px;
   font-weight: 700;
 }
-#tomIcon {
+.tomIcon {
   font-size: 30px;
   display: block;
 }
-#tomIcon,
-#tomTemp,
+.tomIcon,
+.tomTemp,
 #tomFore,
 .forePlaceholder {
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
 }
 .forecast {
@@ -190,11 +190,11 @@ footer {
 }
 .dark #search-input,
 .dark .forePlaceholder,
-.dark #tomTemp {
+.dark .tomTemp {
   color: #0c1445;
 }
 .dark #tomFore,
-.dark #tomIcon {
+.dark .tomIcon {
   color: #4f4c70;
 }
 .dark #sun {

@@ -38,12 +38,11 @@
           <input type="submit" id="search-btn" value="✈️" class="col-2" />
         </div>
       </form>
-
       <div class="infoContainer">
         <div class="row">
-          <h1 id="cityShown" class="col-9">Edinburgh</h1>
+          <h1 id="cityShown" class="col-9">---</h1>
           <h1 class="col-3 rightAlign">
-            <span id="temperatureShown"></span>
+            <span id="temperatureShown">--</span>
             <span class="units">ºC</span>
           </h1>
         </div>
@@ -59,9 +58,9 @@
           </div>
           <div class="col-3 extraInfo">
             <p>
-              <span class="humidity">1</span>%
+              <span class="humidity">--</span>%
               <br />
-              <span class="wind">windy</span> km/h
+              <span class="wind">--</span> km/h
             </p>
           </div>
           <div class="col g-0 weathIcon crop" id="currentIcon"></div>
@@ -75,38 +74,7 @@
             </p>
           </div>
         </div>
-        <div class="row g-0 forecast">
-          <div class="col">
-            <p id="tomTemp">13ºC</p>
-            <i class="fa-regular fa-snowflake" id="tomIcon"></i>
-            <p id="tomFore">2ºC/3ºC</p>
-            <p class="forePlaceholder firstDay">Tomorrow</p>
-          </div>
-          <div class="col">
-            <p id="tomTemp">13ºC</p>
-            <i class="fa-regular fa-snowflake" id="tomIcon"></i>
-            <p id="tomFore">2ºC/3ºC</p>
-            <p class="forePlaceholder secondDay">Tomorrow</p>
-          </div>
-          <div class="col">
-            <p id="tomTemp">13ºC</p>
-            <i class="fa-regular fa-snowflake" id="tomIcon"></i>
-            <p id="tomFore">2ºC/3ºC</p>
-            <p class="forePlaceholder thirdDay">Tomorrow</p>
-          </div>
-          <div class="col">
-            <p id="tomTemp">13ºC</p>
-            <i class="fa-regular fa-snowflake" id="tomIcon"></i>
-            <p id="tomFore">2ºC/3ºC</p>
-            <p class="forePlaceholder fourthDay">Tomorrow</p>
-          </div>
-          <div class="col">
-            <p id="tomTemp">13ºC</p>
-            <i class="fa-regular fa-snowflake" id="tomIcon"></i>
-            <p id="tomFore">2ºC/3ºC</p>
-            <p class="forePlaceholder fifthDay">Tomorrow</p>
-          </div>
-        </div>
+        <div class="row g-0 forecast" id="forecast"></div>
       </div>
     </div>
     <button class="theme">Theme</button>
