@@ -58,7 +58,7 @@ a:hover {
   font-size: 23px;
 }
 .tomTemp,
-#tomFore,
+.tomFore,
 .forePlaceholder,
 #weathertype {
   font-size: 14px;
@@ -74,7 +74,7 @@ a:hover {
 }
 .tomIcon,
 .tomTemp,
-#tomFore,
+.tomFore,
 .forePlaceholder {
   margin: 0 auto;
   text-align: center;
@@ -165,7 +165,14 @@ footer {
   position: relative;
   top: -28px;
 }
-
+.tomTemp,
+.forePlaceholder {
+  font-weight: bold;
+}
+.tomImg {
+  width: 80px;
+  margin: -15px;
+}
 .dark {
   background-image: url("../media/moonBack.png");
   background-color: #0c1445;
@@ -193,7 +200,8 @@ footer {
 .dark .tomTemp {
   color: #0c1445;
 }
-.dark #tomFore,
+
+.dark .tomFore,
 .dark .tomIcon {
   color: #4f4c70;
 }

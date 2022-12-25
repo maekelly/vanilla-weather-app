@@ -36,20 +36,8 @@ function search(response) {
   windShown.innerHTML = Math.round(response.data.daily[0].wind.speed);
   weatherType.innerHTML = response.data.daily[0].condition.description;
   cityShown.innerHTML = response.data.city;
-  displayForecast();
+  displayForecast(response);
 }
-
-let cityInput = document.querySelector("#search-input");
-let citySearch = document.querySelector("#search-form");
-let apiKey = "2c8a3dfad180of4f0ft83a44b4afcc97";
-let homeBtn = document.querySelector("#home-btn");
-citySearch.addEventListener("submit", searchFct);
-
-let themeBtn = document.querySelector(".theme");
-themeBtn.addEventListener("click", changeTheme);
-
-let currentWeather = document.querySelector("#home-btn");
-currentWeather.addEventListener("click", homeWeather);
 
 function changeTheme() {
   let body = document.querySelector("body");
@@ -62,30 +50,48 @@ function changeTheme() {
   }
 }
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = "";
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 6)
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col" id="forecast">
-    <p class="tomTemp">13ºC</p>
-    <p class="fa-snowflake tomIcon"></p>
-    <p id="tomFore">
-    <span class="fore-temp-max">2</span>ºC/<span class="fore-temp-min">3</span>ºC</p>
-    <p class="forePlaceholder firstDay">${day}</p>
-  </div>`;
+    <p class="tomTemp">${Math.round(forecastDay.temperature.day)}ºC</p>
+    <p class="tomIcon"><img class="tomImg" src=${
+      forecastDay.condition.icon_url
+    }></p>
+    <p class="tomFore">
+    <span class="fore-temp-max">${Math.round(
+      forecastDay.temperature.maximum
+    )}</span>ºC/<span class="fore-temp-min">${Math.round(
+          forecastDay.temperature.minimum
+        )}</span>ºC</p>
+    <p class="forePlaceholder">${formatDay(forecastDay.time)}</p>
+    </div>`;
   });
   forecastElement.innerHTML = forecastHTML;
 }
 
-// let day = days[now.getDay()];
+let cityInput = document.querySelector("#search-input");
+let apiKey = "2c8a3dfad180of4f0ft83a44b4afcc97";
+let homeBtn = document.querySelector("#home-btn");
+let themeBtn = document.querySelector(".theme");
+let citySearch = document.querySelector("#search-form");
+let currentWeather = document.querySelector("#home-btn");
 
-// let firstDay = document.querySelector(".firstDay");
-// let secondDay = document.querySelector(".secondDay");
-// let thirdDay = document.querySelector(".thirdDay");
-// let fourthDay = document.querySelector(".fourthDay");
-// let fifthDay = document.querySelector(".fifthDay");
+themeBtn.addEventListener("click", changeTheme);
+citySearch.addEventListener("submit", searchFct);
+currentWeather.addEventListener("click", homeWeather);
